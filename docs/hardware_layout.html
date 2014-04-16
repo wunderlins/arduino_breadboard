@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset='UTF-8'/>
+	<title></title>
+</head>
+<body>
+<h1>From Arduino to a Microcontroller on a Breadboard</h1>
+Source: <a href="http://arduino.cc/en/Tutorial/ArduinoToBreadboard">From Arduino to a Microcontroller on a Breadboard</a>
+<hr/>
+<div>
+<h2>Minimal Circuit (Eliminating the External Clock)</h2>
+<p>If you don't have the extra 16 MHz crystal and 18-22 picofarad capacitors used in the above examples, you can configure the  ATmega328 to use its internal 8 MHz RC oscillator as a clock source instead.  (You don't really need the 10K pullup resistor on the reset pin either, so we remove it to get a truly minimal configuration.)
+</p>
+<p></p><p>You'll need to install support for an additional hardware configuration:
+</p><ol><li>Download this hardware configuration archive: <a href="Breadboard.zip" rel="nofollow">Breadboard.zip</a>
+</li><li>Create a "hardware" sub-folder in your Arduino sketchbook folder (whose location you can find in the Arduino preferences dialog).  If you've previously installed support for additional hardware configuration, you may already have a "hardware" folder in your sketchbook.
+</li><li>Move the "breadboard" folder from the zip archive to the "hardware" sub-folder of your Arduino sketchbook.
+</li><li>Restart the Arduino software.
+</li><li>You should see "ATmega328 on a breadboard (8 MHz internal clock)" in the Tools &gt; Board menu.
+</li></ol><p></p><p>Once you've done this, you can burn the bootloader and upload programs onto your ATmega328 as described above.  <strong>Be sure to select "ATmega328 on a breadboard (8 MHz internal clock)" when burning the bootloader.</strong> (If you select the wrong item and configure the microcontroller to use an external clock, it won't work unless you connect one.)
+</p>
+<p></p>
+<p></p><table><tbody><tr><td valign="top">
+<p></p><div><img src="SimpleBreadboardAVR.png" alt="" title=""></div>
+<p></p><p><em>Using an Arduino board to burn the bootloader onto an ATmega on a breadboard (w/o an external clock).</em>
+</p>
+<p></p></td><td valign="top">
+<p></p><div><img src="ArduinoUSBSerialSimple.png" alt="" title=""></div>
+<p></p><p><em>Uploading sketches to an ATmega on a breadboard.</em>
+</p>
+<p></p></td></tr></tbody></table>
+<p></p><p><br clear="all">
+</p>
+<p></p><h2>Getting Rid of the Arduino Board</h2>
+<p>Once you've programmed the ATmega on the breadboard, you can eliminate the Arduino.  To do so, you'll need to provide an alternative power supply for the microcontroller.  See the <a href="http://arduino.cc/en/Main/Standalone">standalone Arduino on a breadboard</a> tutorial for details.
+</p>
+</div>
+
+<div>
+<h2>Atmega168/328 pin layout</h2>
+<p><img src="Atmega168PinMap2.png" alt="Atmega168/328 pin layout"/>
+</div>
+
+<div>
+<h2>ICSP 6/10 layout</h2>
+<p><img src="avr_icsp.png" alt=""/></p>
+</div>
+
+</body>
+</html>
+
